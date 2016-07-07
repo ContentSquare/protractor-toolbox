@@ -1,0 +1,3 @@
+REVIEWBOARD_URL = "http://reviewboard.content-square.fr"
+REPOSITORY = "protractor-toolbox"
+TRACKING_BRANCH = "master"

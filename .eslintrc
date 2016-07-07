@@ -1,0 +1,16 @@
+{
+    "extends": "airbnb/base",
+    "env": {
+        "browser": true,
+        "protractor": true,
+    },
+    "globals": {
+        "_": true,
+        "angular": true,
+    },
+    "rules": {
+        "indent": ["error", 4],
+        "no-use-before-define": ["error", "nofunc"],
+        "template-curly-spacing": ["error", "always"],
+    }
+}
