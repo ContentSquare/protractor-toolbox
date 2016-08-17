@@ -4,3 +4,4 @@
 
 ### Features
   - Added multiple files containing protractor utils.
+  - Added JSDoc + comments to generate the doc.

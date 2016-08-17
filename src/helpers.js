@@ -1,31 +1,30 @@
 'use strict';
 
 module.exports = {
-    angularPage,
     hasClass,
     hasOption,
-    isAngularPage,
-    notAngularPage,
 };
 
+/**
+ * Detect the presence of a class on a particular element.
+ * @param {Element} element - A Protractor-wrapped element.
+ * @param {string} className - The class we want to check.
+ * @returns {Promise<Boolean>}
+ */
 function hasClass(element, className) {
-    return element.getAttribute('class').then(classes => _.includes(classes.split(' '), className));
+    return element
+        .getAttribute('class')
+        .then(classes => _.includes(classes.split(' '), className));
 }
 
+/**
+ * Detect the presence of an option on a particular element.
+ * @param {Element} select - The Protractor-wrapped select
+ * @param {string} optionText - The text of the option
+ * @returns {Promise<Boolean>}
+ */
 function hasOption(select, optionText) {
-    return select.element(by.cssContainingText('option', optionText)).isPresent();
-}
-
-function angularPage() {
-    browser.ignoreSynchronization = false;
-}
-
-function notAngularPage() {
-    browser.ignoreSynchronization = true;
-}
-
-// In some cases, we have to execute code in Angular context
-// As we can't detect the presence of Angular, we need this method to simulate its detection
-function isAngularPage() {
-    return !browser.ignoreSynchronization;
+    return select
+        .element(by.cssContainingText('option', optionText))
+        .isPresent();
 }
