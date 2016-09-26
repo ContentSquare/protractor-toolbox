@@ -4,9 +4,12 @@
   "description": "Utilities for Protractor tests",
   "main": "./dist/index.js",
   "scripts": {
-    "build": "babel src --presets babel-preset-es2015 --out-dir dist --no-comments --minified && npm run doc",
+    "prepublish": "npm run build",
+    "preversion": "npm run build",
+    "postversion": "npm run docs && . ./publish-docs.sh",
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist --no-comments --minified",
     "lint": "eslint ./src/*.js",
-    "doc": "jsdoc ./src/*.js -d ./doc"
+    "docs": "jsdoc ./src/*.js -d ./gh-pages/docs"
   },
   "repository": {
     "type": "git",

@@ -1,1 +1,0 @@
-'use strict';module.exports={hasClass:hasClass,hasOption:hasOption};function hasClass(element,className){return element.getAttribute('class').then(function(classes){return _.includes(classes.split(' '),className)})}function hasOption(select,optionText){return select.element(by.cssContainingText('option',optionText)).isPresent()}

@@ -1,0 +1,7 @@
+src
+docs
+tests
+CHANGELOG.md
+package.json
+publish-docs.sh
+.eslintrc
