@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: selectors.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: selectors.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>'use strict';
+
+module.exports = {
+    $csstext,
+    $$csstext,
+    $lt,
+    $model,
+    $$model,
+    $options,
+    getFocusedElement,
+    getSelectedOption,
+};
+
+/**
+ * Returns the currently focused element.
+ * @returns {Element} - The currently focused element.
+ */
+function getFocusedElement() {
+    return browser
+        .driver
+        .switchTo()
+        .activeElement();
+}
+
+/**
+ * Get a link element by its text.
+ * Equivalent to Protractor's `element(by.linkText(text))`
+ * @param {string} text - The text of the link
+ * @returns {Element} - The link element wrapped by Protractor
+ */
+function $lt(text) {
+    return element(by.linkText(text));
+}
+
+/**
+ * Get an element containing a class by its text.
+ * Equivalent to Protractor's `element(by.cssContainingText(text))`
+ * @param {string} selectorString - The class to search
+ * @param {string} text - The text of the element
+ * @returns {Element} - The element wrapped by Protractor
+ */
+function $csstext(selectorString, text) {
+    return element(by.cssContainingText(selectorString, text));
+}
+
+/**
+ * Get all element containing a class by their text.
+ * Equivalent to Protractor's `element.all(by.cssContainingText(text))`
+ * @param {string} selectorString - The class to search
+ * @param {string} text - The text of the element
+ * @returns {Element[]} - The elements wrapped by Protractor
+ */
+function $$csstext(selectorString, text) {
+    return element.all(by.cssContainingText(selectorString, text));
+}
+
+/**
+ * Get all options of a select.
+ * Equivalent to Protractor's `element.all(by.options(text))`
+ * @param {string} descriptor - The select to search
+ * @returns {Element[]} - The elements wrapped by Protractor
+ */
+function $options(descriptor) {
+    return element.all(by.options(descriptor));
+}
+
+/**
+ * Get the currently selected option of a select.
+ * It has to be wrapped by Protractor.
+ * @param {Element} select - The Protractor-wrapped select
+ * @returns {Element} - The option wrapped by Protractor
+ */
+function getSelectedOption(select) {
+    return select.$('option:checked');
+}
+
+/**
+ * Get an element by its model.
+ * Equivalent to Protractor's `element(by.model(model))`
+ * @param {string} model - The model to search
+ * @returns {Element} - The element wrapped by Protractor
+ */
+function $model(model) {
+    return element(by.model(model));
+}
+
+/**
+ * Get all elements by their model.
+ * Equivalent to Protractor's `element.all(by.model(model))`
+ * @param {string} model - The model to search
+ * @returns {Element[]} - The elements wrapped by Protractor
+ */
+function $$model(model) {
+    return element.all(by.model(model));
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#$$csstext">$$csstext</a></li><li><a href="global.html#$$model">$$model</a></li><li><a href="global.html#$csstext">$csstext</a></li><li><a href="global.html#$lt">$lt</a></li><li><a href="global.html#$model">$model</a></li><li><a href="global.html#$options">$options</a></li><li><a href="global.html#clearInput">clearInput</a></li><li><a href="global.html#clearLocalStorage">clearLocalStorage</a></li><li><a href="global.html#clickAndWait">clickAndWait</a></li><li><a href="global.html#closeLastOpenedTab">closeLastOpenedTab</a></li><li><a href="global.html#deleteAllCookies">deleteAllCookies</a></li><li><a href="global.html#dragAndDrop">dragAndDrop</a></li><li><a href="global.html#executeInAlertAndDismiss">executeInAlertAndDismiss</a></li><li><a href="global.html#executeInAngular">executeInAngular</a></li><li><a href="global.html#executeInIframe">executeInIframe</a></li><li><a href="global.html#executeInProtractor">executeInProtractor</a></li><li><a href="global.html#getAndWait">getAndWait</a></li><li><a href="global.html#getFocusedElement">getFocusedElement</a></li><li><a href="global.html#getLocalStorageValue">getLocalStorageValue</a></li><li><a href="global.html#getSelectedOption">getSelectedOption</a></li><li><a href="global.html#hasClass">hasClass</a></li><li><a href="global.html#hasOption">hasOption</a></li><li><a href="global.html#mouseMoveTo">mouseMoveTo</a></li><li><a href="global.html#performClicks">performClicks</a></li><li><a href="global.html#performScrolls">performScrolls</a></li><li><a href="global.html#pressGlobalKey">pressGlobalKey</a></li><li><a href="global.html#selectOption">selectOption</a></li><li><a href="global.html#setWindowSize">setWindowSize</a></li><li><a href="global.html#waitElement">waitElement</a></li><li><a href="global.html#waitToBeClickable">waitToBeClickable</a></li><li><a href="global.html#waitToBeDisplayed">waitToBeDisplayed</a></li><li><a href="global.html#waitToBeHidden">waitToBeHidden</a></li><li><a href="global.html#waitToDisappear">waitToDisappear</a></li><li><a href="global.html#waitToHaveClass">waitToHaveClass</a></li><li><a href="global.html#waitToHaveText">waitToHaveText</a></li><li><a href="global.html#waitToResolve">waitToResolve</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.0</a> on Tue Sep 27 2016 15:45:12 GMT+0200 (CEST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
