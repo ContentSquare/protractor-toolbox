@@ -1,6 +1,7 @@
 # Protractor Toolbox
 
 Utilities for Protractor tests. Tested with Protractor 3.0.0.
+[API docs are here](https://contentsquare.github.io/protractor-toolbox/docs/index.html)
 
 ## Installation
 
@@ -24,12 +25,9 @@ Utilities for Protractor tests. Tested with Protractor 3.0.0.
 
 ## Contributing
 
-Please ensure your pull request adheres to the following guidelines:
+If you want to contribute, do not forget to run the linter (`npm run lint`) and fix the errors.
 
-  - Run the linter (`npm run lint`) and fix the errors.
-  - Commit the `dist` folder with your changes (`npm run build`).
-
-Thank you for your contributions! :sparkles:
+Thank you! :sparkles:
 
 ## Licence
 
